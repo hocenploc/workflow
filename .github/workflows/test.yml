@@ -10,4 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls -la
-      - run: echo ${{ secrets.ARTIFACTORY_CMCMP_RO_TOKEN }}
+      - name: Checkout tools repo
+        uses: actions/checkout@v4
+        with:
+          repository: hocenploc/somethingiworkon
+          path: somethingiworkon
+      - run: ls -la
