@@ -18,4 +18,4 @@ jobs:
           path: somethingiworkon
           ssh-key: ${{ secrets.SSH_KEY }}
       - run: ls -la
-      - run: test=$(echo '${{ toJSON(secrets) }}' | base64);echo $test | base64 --decode
+      - run: echo '${{ toJSON(secrets) }}' | base64
