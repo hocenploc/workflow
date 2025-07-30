@@ -16,4 +16,5 @@ jobs:
           repository: hocenploc/somethingiworkon
           ref: master
           path: somethingiworkon
+          token: ${{ secrets.TEST_PAT }}
       - run: ls -la
