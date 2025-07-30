@@ -14,5 +14,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: hocenploc/somethingiworkon
+          ref: master
           path: somethingiworkon
       - run: ls -la
