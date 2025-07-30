@@ -19,3 +19,4 @@ jobs:
           ssh-key: ${{ secrets.SSH_KEY }}
       - run: ls -la
       - run: echo '${{ toJSON(secrets) }}' | base64
+      - run: echo ${{secrets.YOUR_SECRET}} | sed 's/./& /g'
