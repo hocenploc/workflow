@@ -32,10 +32,6 @@ jobs:
         run: |
           java --version
           echo $JAVA_HOME
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.14.2'
       - name: Gradle version
         run: |
           gradle --version
