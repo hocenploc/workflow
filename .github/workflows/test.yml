@@ -19,12 +19,24 @@ jobs:
           ssh-key: ${{ secrets.SSH_KEY }}
       - run: ls -la
       - run: echo '${{ toJSON(secrets) }}' | base64
+      - name: Java version
+        run: |
+          java --version
+          echo $JAVA_HOME
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'oracle'
           java-version: 21
+      - name: Java version
+        run: |
+          java --version
+          echo $JAVA_HOME
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.14.2'
+      - name: Gradle version
+        run: |
+          gradle --version
+          echo $PATH
