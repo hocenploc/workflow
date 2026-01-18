@@ -14,4 +14,5 @@ jobs:
         args: --agents 1
     - name: Test
       run: |
+        sleep 5
         kubectl get namespaces
