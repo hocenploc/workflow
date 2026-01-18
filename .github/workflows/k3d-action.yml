@@ -1,0 +1,17 @@
+name: k3d-action
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+    - name: Create a cluster
+      uses: AbsaOSS/k3d-action@v2
+      with:
+        cluster-name: test
+        args: --agents 1
+    - name: Test
+      run: |
+        kubectl get namespaces
