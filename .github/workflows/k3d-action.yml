@@ -11,8 +11,9 @@ jobs:
       uses: AbsaOSS/k3d-action@v2
       with:
         cluster-name: test
-        args: --agents 1
+        args: >-
+          --agents 1
+          --k3s-arg "--no-deploy=traefik,servicelb,metrics-server@server:*"
     - name: Test
       run: |
-        sleep 5
         kubectl get namespaces
