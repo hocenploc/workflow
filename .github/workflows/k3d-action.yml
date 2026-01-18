@@ -13,7 +13,7 @@ jobs:
         cluster-name: test
         args: >-
           --agents 1
-          --k3s-arg "--no-deploy=traefik,servicelb,metrics-server@server:*"
+          --k3s-arg "--disable=metrics-server@server:*"
     - name: Test
       run: |
         kubectl get namespaces
