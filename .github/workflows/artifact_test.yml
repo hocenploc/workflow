@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Get artifact
         run: |
-          curl -k -o ./512MB.zip http://212.183.159.230/512MB.zip
+          curl -k -o ./1GB.zip http://212.183.159.230/1GB.zip
           ls -la
       - uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
+          name: my-artifact-2
           path: |
-            ./512MB.zip
+            ./1GB.zip
